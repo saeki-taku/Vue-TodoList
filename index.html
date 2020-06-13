@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap"
+      rel="stylesheet"
+    />
+    <title>ToDoList</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="wrapper">
+        <div class="container">
+          <h1 class="todoTitle">今日やろう！をあやかろう！</h1>
+          <form v-on:submit.prevent="" class="form">
+            <div class="form__box">
+              <input
+                type="text"
+                v-model="text"
+                v-on:keyup.enter="changeItems"
+                ref="editor"
+                class="input__text"
+                />
+              <button type="text" v-on:click="sendItem" class="send__btn btn">
+                {{ changeButtonText }}
+              </button>
+            </div>
+          </form>
+          <ul class="text__list">
+            <li
+              v-for="(item,index) in items"
+              v-bind:key="index"
+              class="text__item">
+              <span class="todoText">{{ item }}</span>
+              <div class="btn__box">
+                <button class="edit__btn btn" v-on:click="edit(index)">
+                  <img
+                    src="./assets/images/edit.png"
+                    class="edit__icon"
+                    alt=""/>
+                </button>
+                <button class="remove__btn btn" v-on:click="remove(index)">
+                  <img
+                    src="./assets/images/remove.png"
+                    class="remove__icon"
+                    alt=""/>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>

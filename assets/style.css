@@ -1,0 +1,71 @@
+body {
+  background-color: rgb(184, 224, 186);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: block;
+}
+.btn {
+  cursor: pointer;
+}
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 10px;
+}
+.container {
+  margin: 0 auto;
+}
+.todoTitle {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgb(85, 75, 110);
+  font-family: 'Kosugi Maru', sans-serif;
+}
+.form__box {
+  display: flex;
+  margin-bottom: 20px;
+
+}
+.input__text {
+  width: 90%;
+  height: 50px;
+  border-radius: 4px;
+  font-size: 1.4rem;
+}
+.send__btn {
+  width: 10%;
+  background-color: rgb(79, 185, 255);
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: rgb(245, 239, 239);
+}
+.text__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border: 1px solid rgb(111, 175, 111);
+  background-color: #fff;
+  padding: 5px;
+  height: 40px;
+  border-radius: 4px;
+}
+.todoText{
+  width: 75%;
+  overflow: scroll;
+  white-space:nowrap;
+}
+.edit__btn ,.remove__btn {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+.edit__icon, .remove__icon {
+  height: 28px;
+  width: 28px;
+}
+
+.edit__icon {
+  margin-right: 8px;
+}
