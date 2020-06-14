@@ -3,7 +3,7 @@ let app = new Vue({
   data: {
     text: "",
     editIndex: -1,
-    items: ["vue.jsを勉強する！", "カリキュラムを進める", "悪鬼滅殺！"]
+    items: ["勉強する！", "買い物に行く", "掃除をする"]
   },
   computed: {
     changeButtonText() {
@@ -22,19 +22,6 @@ let app = new Vue({
       } else if(this.editIndex != -1 && this.text != emptyTodo){//編集時の処理
         this.items.splice(this.editIndex, 1, this.text ); // 第３引数...追加
       }
-
-
-      // if (this.editIndex === -1 && this.text != "" && this.text != emptyTodo) {
-      //   this.items.push(this.text);
-      // } else if (this.editIndex === -1 && this.text == "") {
-      //   this.text = emptyTodo;
-      //   return;
-      // } else if(this.editIndex != -1 && this.text != ""){
-      //   this.items.splice(this.editIndex, 1, this.text );
-      // } else {
-      //   this.text = emptyEdit;
-      //   return;
-      // }
       this.empty();
     },
 
@@ -50,7 +37,10 @@ let app = new Vue({
     },
 
     remove(index) {
+      if (this.text) {
+        return;//編集中は削除禁止の処理
+      }
       this.items.splice(index, 1);
-    }
-  }
+    },
+  },
 });
